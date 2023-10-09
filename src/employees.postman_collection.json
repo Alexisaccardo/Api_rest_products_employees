@@ -1,0 +1,178 @@
+{
+	"info": {
+		"_postman_id": "4adae485-0ea1-4834-8d56-7d6763bdca7b",
+		"name": "employees",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29027861"
+	},
+	"item": [
+		{
+			"name": "Register_employee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"code_employee\": \"87679\",\r\n        \"name\": \"Johan Alexis\",\r\n        \"date_contract\": \"2023/10/09\",\r\n        \"cellphone\": \"3132223445\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/register_employee",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"register_employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit_employee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"code_employee\": \"87679\",\r\n        \"name\": \"Johan Alexis\",\r\n        \"date_contract\": \"2023/10/09\",\r\n        \"cellphone\": \"3223457689\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/edit_employee",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"edit_employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search_employee",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/search_employee",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"search_employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register_product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"code\": \"7890\",\r\n        \"name\": \"yogurt\",\r\n        \"prod_employee\": \"87879\",\r\n        \"expiration\": \"2024/10/09\",\r\n        \"description\": \"Sabor fresa, 500 mililitros\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/register_products",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"register_products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit_product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"code\": \"766\",\r\n        \"name\": \"bonyurt\",\r\n        \"prod_employee\": \"\",\r\n        \"expiration\": \"2024/10/09\",\r\n        \"description\": \"100 mililitros\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/edit_product",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"edit_product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search_products",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/search_products",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"search_products"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
