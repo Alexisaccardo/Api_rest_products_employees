@@ -154,7 +154,7 @@ public class BD {
         return new Products(null, null, null, null, null);
     }
 
-    public String Select_employee(String prod_employee) throws ClassNotFoundException, SQLException {
+    public String Select_employee(String prod_employee) throws ClassNotFoundException, SQLException, ParseException {
 
         String driver = "com.mysql.cj.jdbc.Driver";
         String url = "jdbc:mysql://localhost:3306/product";
@@ -177,18 +177,22 @@ public class BD {
             String code = resultSet.getString("code");
             String name = resultSet.getString("name");
             String date_contract = resultSet.getString("date_contract");
-            long milisegundos = System.currentTimeMillis();
-            Date fechaActual = new Date(milisegundos);
             String cellphone = resultSet.getString("cellphone");
-
-            if (!fechaActual.equals("")) {
-                return code;
+            long milliseconds = System.currentTimeMillis();
+            Date date_now = new Date(milliseconds);
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+            java.util.Date date_expiration = format.parse(date_contract);
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(date_expiration);
+            calendar.add(Calendar.DAY_OF_YEAR, 30);
+            java.util.Date new_date_expiration = calendar.getTime();
+            if (date_now.compareTo(new_date_expiration)>0) {
+            return code;
             } else {
-                System.out.println(date_employe);
+            System.out.println(date_employe);
             }
 
             System.out.println("Estes es el codigo del empleado: " + code + " Nombre: " + name + " Fecha de contrato: " + date_contract + " Por un valor de: " + cellphone);
-
 
         }
 
@@ -264,22 +268,21 @@ public class BD {
             String name = resultSet2.getString("name");
             String prod_employee = resultSet2.getString("prod_employee");
             String expiration = resultSet2.getString("expiration");
-            long milisegundos = System.currentTimeMillis();
-            Date fechaActual = new Date(milisegundos);
-            SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
-            java.util.Date fechaexpiration = formato.parse(expiration);
-            Calendar calendar = Calendar.getInstance();calendar.setTime(fechaexpiration);// Agregar 30 días a la fecha de expiracióncalendar.add(Calendar.DAY_OF_YEAR, 30);
-            java.util.Date nuevaFechaExpiration = calendar.getTime();
-            fechaActual.compareTo(fechaexpiration);
             String description = resultSet2.getString("description");
-
-            if (fechaActual.compareTo(nuevaFechaExpiration)<0){
+            long milliseconds = System.currentTimeMillis();
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+            java.util.Date date_expiration = format.parse(expiration);
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(date_expiration);
+            long difference_In_Milliseconds = calendar.getTimeInMillis() - milliseconds;
+            long difference_In_Days = difference_In_Milliseconds / (24 * 60 * 60 * 1000);
+            if (difference_In_Days >= 1 && difference_In_Days <= 30){
                 Products products = new Products(code, name, prod_employee, expiration, description);
                 list.add(products);
             } else {
-                System.out.println(search_products);
+                System.out.println(search_products);    }
             }
-        }
+
             return list;
         }
     }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 09-10-2023 a las 17:02:21
+-- Tiempo de generación: 09-10-2023 a las 21:06:20
 -- Versión del servidor: 8.0.31
 -- Versión de PHP: 8.0.26
 
@@ -41,7 +41,8 @@ CREATE TABLE IF NOT EXISTS `employee` (
 --
 
 INSERT INTO `employee` (`code`, `name`, `date_contract`, `cellphone`) VALUES
-('87679', 'Johan Alexis', '2023/10/09', '3223457689');
+('87679', 'Johan Alexis', '2023-10-09', '3223457689'),
+('89898', 'Javier', '2023-08-09', '3134563445');
 
 -- --------------------------------------------------------
 
@@ -64,7 +65,8 @@ CREATE TABLE IF NOT EXISTS `products` (
 --
 
 INSERT INTO `products` (`code`, `name`, `prod_employee`, `expiration`, `description`) VALUES
-('766', 'bonyurt', '87679', '2024/10/10', '100 mililitros');
+('766', 'bonyurt', '87679', '2023-10-25', '100 mililitros'),
+('8909', 'mantequilla', '89898', '2024-10-09', 'con sal');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

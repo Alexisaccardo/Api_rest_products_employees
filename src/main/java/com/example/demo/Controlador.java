@@ -62,7 +62,7 @@ public class Controlador {
     }
 
     @PostMapping("/register_products")
-    public Products register_products(@RequestBody Products products) throws SQLException, ClassNotFoundException {
+    public Products register_products(@RequestBody Products products) throws SQLException, ClassNotFoundException, ParseException {
 
         String code = products.getCode();
         String name = products.getName();
@@ -80,7 +80,7 @@ public class Controlador {
             String code_employee = bd.Select_employee(prod_employee);
 
             if (code_employee.equals("")) {
-                return new Products(null, null, "No existe un empleado registrado con este codigo", null, null);
+                return new Products(null, null, "La fecha de inicio no es mayor a 30 días", null, null);
             } else {
                 products = bd.Register_products(code, name, prod_employee, expiration, description);
             }
@@ -99,7 +99,7 @@ public class Controlador {
 
         if (code == null || code.equals("") || code.length() < 0 || name == null || name.equals("") || name.length() < 0 ||
                 expiration == null || expiration.equals("") || expiration.length() < 0 || description == null || description.equals("") ||
-                description.length() < 0) {
+                description.length() < 0){
 
             return new Products(null, null, null, null, null);
         } else {
@@ -115,7 +115,10 @@ public class Controlador {
     public List<Products> search_products() throws SQLException, ClassNotFoundException, ParseException {
         BD bd = new BD();
         List<Products> list = bd.Search_products();
-
+        if (list.isEmpty()){
+            Products products = new Products(null, null, null, "La fecha de expiración supera los 30 días", null);
+            list.add(products);
+        }
         return list;
     }
 }

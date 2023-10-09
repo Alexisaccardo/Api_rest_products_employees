@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "    {\r\n        \"code_employee\": \"87679\",\r\n        \"name\": \"Johan Alexis\",\r\n        \"date_contract\": \"2023/10/09\",\r\n        \"cellphone\": \"3132223445\"\r\n    }",
+					"raw": "    {\r\n        \"code_employee\": \"89898\",\r\n        \"name\": \"Javier\",\r\n        \"date_contract\": \"2023-10-09\",\r\n        \"cellphone\": \"3134563445\"\r\n    }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -40,7 +40,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": " {\r\n        \"code_employee\": \"87679\",\r\n        \"name\": \"Johan Alexis\",\r\n        \"date_contract\": \"2023/10/09\",\r\n        \"cellphone\": \"3223457689\"\r\n    }",
+					"raw": " {\r\n        \"code_employee\": \"87679\",\r\n        \"name\": \"Johan Alexis\",\r\n        \"date_contract\": \"2023-10-09\",\r\n        \"cellphone\": \"3223457689\"\r\n    }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -97,7 +97,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": " {\r\n        \"code\": \"7890\",\r\n        \"name\": \"yogurt\",\r\n        \"prod_employee\": \"87879\",\r\n        \"expiration\": \"2024/10/09\",\r\n        \"description\": \"Sabor fresa, 500 mililitros\"\r\n    }",
+					"raw": " {\r\n        \"code\": \"8909\",\r\n        \"name\": \"mantequilla\",\r\n        \"prod_employee\": \"89898\",\r\n        \"expiration\": \"2024-10-09\",\r\n        \"description\": \"con sal\"\r\n    }",
 					"options": {
 						"raw": {
 							"language": "json"
